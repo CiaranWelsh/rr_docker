@@ -1,0 +1,25 @@
+Rough notes for building evilnose/roadrunner_manylinux:py38
+
+For LLVM, build from llvm 6.0.1 source; installed to /home/llvm/install.
+Got some errors 'undefined reference to 
+`typeinfo for llvm::raw_ostream`' from 
+linking roadrunner_c_api and sbml benchmark. Apparently this has to do
+with LLVM not being built with RTTI enabled. I have no idea why RTTI is required
+for manylinux but not other OS, but well. 
+
+So, in the configure step for LLVM, add cmake variable "LLVM_ENABLE_RTTI=Yes".
+
+
+For libroadrunner-deps, need to first do
+
+```
+yum install zlib-devel
+yum install bzip2-devel
+yum install libxml2-devel
+```
+
+For roadrunner, had to create symbolic link for numpy/include in the python include dir,
+otherwise roadrunner build cannot find it.
+
+See the .bashrc file in the evilnose/roadrunner_manylinux image for PATH info.
+
