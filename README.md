@@ -16,6 +16,8 @@ source folders elsewhere. These are the two pertaining lines:
 i.e. change it to `-v path/to/roadrunner/source:/home/roadrunner/source`, etc. Don't change the directory after the
 colon, since it is a fixed mount point inside the docker container filesystem.
 
+After this, enter `build.sh` and edit *only* the `PY_MINOR_VERSION` variable to set Python3 minor version.
+
 After this is done, simply run `build.sh` and then `run.sh` to build the wheels. If successful, the output wheel will be
 in "out/". If something went wrong, you may run `exec.sh` to enter the container and continue build manually. A few things about
 the filesystem:
@@ -57,8 +59,6 @@ roadrunner build step.
 
 ## Issues and TODOs
 
-* For now I've manually installed bzip2, zlib, libxml2, and numpy using `yum install` in the `evilnose/roadrunner_manylinux`
-image. This would make the image larger and less repreducible. The steps are a bit complex. I've included some notes on
-how to reproduce that image in "notes.txt" for future reference.
-* Also the Python version can be easily changed by modifying .bashrc to point to another Python interpretor.
+* For now the base image includes llvm by default and directory structure by default. It would be good to have a project
+that builds the base image.
 

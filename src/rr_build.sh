@@ -3,12 +3,6 @@
 
 echo building roadrunner...
 
-source ~/.bashrc
-
-export LD_LIBRARY_PATH=/opt/rh/devtoolset-9/root/usr/lib64:/opt/rh/devtoolset-9/root/usr/lib:\
-/opt/rh/devtoolset-9/root/usr/lib64/dyninst:/opt/rh/devtoolset-9/root/usr/lib/dyninst:\
-/usr/local/lib64:/usr/local/lib
-
 cd /home/roadrunner/
 rm -rf build/*
 cd build
@@ -21,9 +15,9 @@ cmake ../source -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../install/ \
 -DTHIRD_PARTY_INSTALL_FOLDER=../install -DRR_USE_CXX11=OFF -DUSE_TR1_CXX_NS=OFF \
 -DSWIG_DIR=/usr/local/share/swig/3.0.12/ \
 -DSWIG_EXECUTABLE=/usr/local/bin/swig -DBUILD_PYTHON=ON \
--DPYTHON_EXECUTABLE=/opt/python/cp38-cp38/bin/python \
--DPYTHON_LIBRARY=/opt/python/cp38-cp38/lib/python3.8 \
--DPYTHON_INCLUDE_DIR=/opt/python/cp38-cp38/include/python3.8 \
+-DPYTHON_EXECUTABLE=$PYTHON_PATH/bin/python \
+-DPYTHON_LIBRARY=$PYTHON_PATH/lib/python3.${PY3_MINOR_VERSION} \
+-DPYTHON_INCLUDE_DIR=$PYTHON_PATH/include/python3.${PY3_MINOR_VERSION}${PY_SUFFIX} \
 -DLLVM_INSTALL_PREFIX=../../llvm/install
 
 echo building...

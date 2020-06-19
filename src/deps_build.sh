@@ -2,9 +2,6 @@
 
 echo building dependencies...
 
-# bring binaries into PATH
-source ~/.bashrc
-
 # need to do this for linking, specific to docker
 export LD_LIBRARY_PATH=/opt/rh/devtoolset-9/root/usr/lib64:/opt/rh/devtoolset-9/root/usr/lib:\
 /opt/rh/devtoolset-9/root/usr/lib64/dyninst:/opt/rh/devtoolset-9/root/usr/lib/dyninst:\
