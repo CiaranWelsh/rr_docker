@@ -1,6 +1,4 @@
-Here are some scripts for building/testing libRoadrunner Python wheels in manylinux2014 environment, using docker. Note
-that for now this only supports Python 3.8, but it is trivial to add images to do this for other versions. See TODOs
-below. This should work for any linux system with Docker, including WSL 2.
+Here are some scripts for building/testing libRoadrunner Python wheels in manylinux2014 environment, using docker. This supports building for Python 3.5-3.8.
 
 ## Build steps
 
