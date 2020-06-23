@@ -57,6 +57,7 @@ roadrunner build step.
 
 ## Issues and TODOs
 
+* Building libroadrunner-deps takes a long time and it doesn't change often. Add an option that allows the user to not have to build deps every time.
 * For now the base image includes llvm by default and directory structure by default. It would be good to have a project
-that builds the base image.
+that builds the base image so that we can reproduce it.
 
