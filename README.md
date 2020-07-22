@@ -35,6 +35,7 @@ If when running `run.sh` there is error saying a container with the same name al
 
 * By default roadrunner and deps and built with "make -j4". If you want to change that, you simply need to edit the
 `rr_build.sh` and `deps_build.sh` scripts in `src` and run `build.sh` to rebuild the image.
+* uncomment/comment the line `-e SKIP_RR_DEPS=1` in run.sh to skip/not skip building roadrunner-dependencies
 
 ## Docker Scripts
 

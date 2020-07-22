@@ -1,0 +1,2 @@
+# write llvm build script
+ cmake ../source/ -DCMAKE_INSTALL_PREFIX=../install/ -DLLVM_ENABLE_RTTI=Yes

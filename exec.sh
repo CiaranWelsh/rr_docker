@@ -1,6 +1,8 @@
 #/bin/bash
 
-docker start rr_build_container
+CONT=strip_container_py37
 
-docker exec -it rr_build_container /bin/bash
+docker start $CONT
+
+docker exec -it $CONT /bin/bash
 

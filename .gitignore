@@ -1,4 +1,7 @@
-out/*
-roadrunner
-libroadrunner-deps
+out
+build
+sources
+venv2
+py36
+temp
 

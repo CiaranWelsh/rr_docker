@@ -2,21 +2,24 @@
 
 echo building dependencies...
 
-# need to do this for linking, specific to docker
-export LD_LIBRARY_PATH=/opt/rh/devtoolset-9/root/usr/lib64:/opt/rh/devtoolset-9/root/usr/lib:\
-/opt/rh/devtoolset-9/root/usr/lib64/dyninst:/opt/rh/devtoolset-9/root/usr/lib/dyninst:\
-/usr/local/lib64:/usr/local/lib
-
-# cleanup possible previous build and get ready
+# get into directory
 cd /home/libroadrunner-deps/
-rm -rf build/*
 cd build
 
-echo configuring...
-cmake ../source/ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../../roadrunner/install
+if [[ -z "${SKIP_RR_DEPS}" ]]; then
+    # not skipping; cleanup previous build and rebuild
+    echo NOTE: rebuilding roadrunner dependencies...
 
-echo building...
-make -j4
+    rm -rf *
+
+    echo configuring...
+    cmake ../source/ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../../roadrunner/install
+
+    echo building...
+    make -j4
+else
+    echo NOTE: skipping libroadrunner-deps build. Proceeding to installation...
+fi
 
 echo installing...
 make install

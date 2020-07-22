@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PY_MINOR_VERSION=7
+PY_MINOR_VERSION=6
 
 # See Dockerfile for more details
 if [ "$PY_MINOR_VERSION" == "8" ]; \
@@ -10,5 +10,5 @@ fi
 
 docker build --build-arg PYTHON3_MINOR_VERSION=$PY_MINOR_VERSION \
     --build-arg PYTHON_SUFFIX=$PY_SUFFIX \
-    --tag rr_build .
+    --tag last2010_py3$PY_MINOR_VERSION .
 

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker rm rr_build_container
+docker rm strip_container_py37

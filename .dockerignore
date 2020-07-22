@@ -1,0 +1,8 @@
+.git
+build
+temp-build-py36
+test-build-py37
+sbml-experimental
+temp
+venv*
+py36
