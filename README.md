@@ -1,6 +1,4 @@
-Here are some scripts for building/testing libRoadrunner Python wheels in manylinux2014 environment, using docker. Note
-that for now this only supports Python 3.8, but it is trivial to add images to do this for other versions. See TODOs
-below. This should work for any linux system with Docker, including WSL 2.
+Here are some scripts for building/testing libRoadrunner Python wheels in manylinux2014 environment, using docker. This supports building for Python 3.5-3.8.
 
 ## Build steps
 
@@ -60,6 +58,7 @@ roadrunner build step.
 
 ## Issues and TODOs
 
+* Building libroadrunner-deps takes a long time and it doesn't change often. Add an option that allows the user to not have to build deps every time.
 * For now the base image includes llvm by default and directory structure by default. It would be good to have a project
-that builds the base image.
+that builds the base image so that we can reproduce it.
 
