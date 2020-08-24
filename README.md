@@ -1,14 +1,15 @@
-Here are some scripts for building/testing libRoadrunner Python wheels in manylinux2014 environment, using docker. This supports building for Python 3.5-3.8.
+Here are some scripts for building/testing libRoadrunner Python wheels in manylinux2010/manylinux2014 environment, using docker. This supports building for Python 3.5-3.8.
 
 ## Build steps
 
 Building is very simple. One simply needs to run the docker scripts (described below). First, the build script looks for
-roadrunner and libroadrunner-deps source code in this directory. You can edit `run.sh` to make docker look for the
+roadrunner and libroadrunner-deps source code (and more) in this directory. You can edit `run.sh` to make docker look for the
 source folders elsewhere. These are the two pertaining lines:
 
 ```
--v $(pwd)/roadrunner:/home/roadrunner/source \
--v $(pwd)/libroadrunner-deps:/home/libroadrunner-deps/source \
+-v $SOURCES_DIR/roadrunner:/home/roadrunner/source \
+-v $SOURCES_DIR/libroadrunner-deps:/home/libroadrunner-deps/source \
+...
 ```
 
 i.e. change it to `-v path/to/roadrunner/source:/home/roadrunner/source`, etc. Don't change the directory after the
