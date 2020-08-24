@@ -39,7 +39,7 @@ class BinaryDistribution(Distribution):
         return True
 
 setup(name             = "tesedml",
-      version          = "0.4.5.2",
+      version          = "0.4.5.3",
       description      = "LibSEDML Python API",
       long_description = ("libSEDML is a library for reading, writing and "+
       "manipulating SEDML. It is written in ISO C and C++, supports SEDML "+

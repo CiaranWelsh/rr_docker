@@ -18,7 +18,7 @@ make install
 
 cd ../install
 
-echo "from .libnuml import *" > lib/python3.${PY3_MINOR_VERSION}/site-packages/libnuml/__init__.py
+echo "from .libnuml import *" > lib/python3.${PY3_MINOR_VERSION}/site-packages/libcombine/__init__.py
 cp /home/setup_scripts/libnuml_setup.py setup.py
 
 python setup.py bdist_wheel

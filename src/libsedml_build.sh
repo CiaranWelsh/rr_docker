@@ -21,7 +21,7 @@ cd ../install
 
 cp /home/setup_scripts/libsedml_setup.py setup.py
 
-echo "from .libsbml import *" > lib64/python3.${PY3_MINOR_VERSION}/site-packages/libsbml/__init__.py
+echo "from .libsedml import *" > lib64/python3.${PY3_MINOR_VERSION}/site-packages/libsedml/__init__.py
 
 python setup.py bdist_wheel
 
