@@ -8,7 +8,7 @@ if [ "$PY_MINOR_VERSION" == "8" ]; \
     else PY_SUFFIX=m; \
 fi 
 
-docker build --build-arg PYTHON3_MINOR_VERSION=$PY_MINOR_VERSION \
+DOCKER_BUILDKIT=1 docker build --build-arg PYTHON3_MINOR_VERSION=$PY_MINOR_VERSION \
     --build-arg PYTHON_SUFFIX=$PY_SUFFIX \
     --tag last2010_py3$PY_MINOR_VERSION .
 

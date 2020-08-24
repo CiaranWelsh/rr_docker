@@ -1,6 +1,6 @@
 out
 build
-sources
+sources/*
 venv2
 py36
 temp

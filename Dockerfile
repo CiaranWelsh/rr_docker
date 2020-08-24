@@ -25,7 +25,7 @@ ENV LD_LIBRARY_PATH="/opt/rh/devtoolset-9/root/usr/lib64:/opt/rh/devtoolset-9/ro
 
 ENV PYTHON_INTERP=${PYTHON_PATH}/bin/python
 ENV PYTHON_INCLUDE=${PYTHON_PATH}/include/python3.${PYTHON3_MINOR_VERSION}${PY_SUFFIX}
-ENV PYTHON_LIB=${PATH}/lib/python3.${PYTHON3_MINOR_VERSION}
+ENV PYTHON_LIB=${PYTHON_PATH}/lib/python3.${PYTHON3_MINOR_VERSION}
 
 ENV BZIP2_LIB=/usr/lib64/libbz2.so
 ENV USR_INCLUDE=/usr/include/
@@ -78,12 +78,16 @@ RUN /home/scripts/swig_build.sh
 ENV TZ=America/Chicago
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+CMD /home/scripts/libsbml-experimental_build.sh && \
+        /home/scripts/libnuml_build.sh && \
+        /home/scripts/libsedml_build.sh && \
+        /home/scripts/phrasedml_build.sh
 #CMD home/scripts/deps_build.sh && \
 #/home/scripts/rr_build.sh
 #/home/scripts/rrplugins_build.sh && \
 #CMD /home/scripts/build_wheel_and_test.sh && \
-/home/scripts/libsbml_build.sh && \
-/home/scripts/antimony_build.sh && \
+#/home/scripts/libsbml_build.sh && \
+#CMD /home/scripts/antimony_build.sh
 #/home/scripts/libsbml-experimental_build.sh && \
 #/home/scripts/libnuml_build.sh && \
 #/home/scripts/libsedml_build.sh && \

@@ -1,6 +1,6 @@
 #/bin/bash
 
-CONT=strip_container_py37
+CONT=tecombine_container_py38
 
 docker start $CONT
 
