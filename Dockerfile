@@ -18,7 +18,7 @@ ENV TOOLS_PATH="/opt/rh/devtoolset-9/root/bin/"
 # /home/bin for storing python version-invariant stuff
 ENV PATH="${PYTHON_PATH}/bin:${TOOLS_PATH}:/home/bin:$PATH"
 
-# this is necessary for manylinux2010, but need to be set of 2014
+# this is not necessary for manylinux2010, but need to be set for 2014
 ENV LD_LIBRARY_PATH="/opt/rh/devtoolset-9/root/usr/lib64:/opt/rh/devtoolset-9/root/usr/lib:\
 /opt/rh/devtoolset-9/root/usr/lib64/dyninst:/opt/rh/devtoolset-9/root/usr/lib/dyninst:\
 /usr/local/lib64:/usr/local/lib"
